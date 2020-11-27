@@ -1,0 +1,135 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--bgColor: #31366f;
+	--hoverBgColor: #01aefe;
+}
+
+body {
+	background: var(--bgColor);
+	font-family: "Open Sans", sans-serif;
+	text-decoration: none;
+	list-style: none;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+}
+
+ul {
+	list-style: none;
+}
+
+.pricing-table {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	width: min(1400px, 100%);
+	padding: auto 1em;
+	margin: 0 auto;
+	align-items: center;
+	justify-content: center;
+}
+
+.pricing-card {
+	flex: 1;
+	min-width: 270px;
+	max-width: 360px;
+	background: #fff;
+	margin: 10px 20px;
+	text-align: center;
+	cursor: pointer;
+	overflow: hidden;
+	color: #2d2d2d;
+	transition: 0.4s linear;
+	position: relative;
+	z-index: 100;
+}
+.pricing-card::after {
+	position: absolute;
+	content: "";
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 80%;
+	background: var(--hoverBgColor);
+	transform-origin: top;
+	transform: scale(0);
+	border-radius: 0 0 50px 50px;
+	transition: transform 0.4s linear;
+	z-index: -1;
+}
+
+.pricing-card:hover::after {
+	transform: scale(1);
+}
+.pricing-card:hover {
+	color: #fff;
+}
+
+.pricing-card-header {
+	background: var(--hoverBgColor);
+	display: inline-block;
+	padding: 5px 12px;
+	margin-bottom: 1em;
+	border-radius: 0 0 7.5px 7.5px;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 16px;
+	font-weight: 300;
+	position: relative;
+}
+
+.pricing-card-header::after {
+	position: absolute;
+	content: "";
+	height: 2px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	background: #fff;
+	transform: scale(0);
+	transition: transform 0.4s linear;
+}
+.pricing-card:hover .pricing-card-header::after {
+	transform: scale(1);
+}
+.pricing-card .price {
+	font-size: 36px;
+	margin-bottom: 1em;
+}
+
+.price sup {
+	font-size: 12px;
+	font-weight: 800;
+}
+.price span {
+	font-size: 12px;
+	font-weight: 800;
+}
+
+.pricing-card ul li {
+	margin-bottom: 1rem;
+}
+.pricing-card ul li:last-of-type {
+	margin-bottom: 4em;
+}
+
+.order-btn {
+	margin: 1em auto;
+	border: 2px solid #fff;
+	display: inline-block;
+	padding: 12px 16px;
+	border-radius: 4px;
+	text-transform: uppercase;
+	font-size: 12px;
+	color: var(--hoverBgColor);
+	transition: border 0.4s linear;
+}
+.order-btn:hover {
+	border: 2px solid var(--hoverBgColor);
+}
